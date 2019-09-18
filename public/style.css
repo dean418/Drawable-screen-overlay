@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
 	width: 100%;
 	height: 100%;
 	padding: 0;
@@ -13,23 +14,26 @@ html, body {
 
 .menuBar {
 	width: 100%;
-	height: 27px;
+	height: 28px;
 	padding: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 	opacity: 1;
 	background-color: #404040;
 }
 
-.colors {
+.colors, .sizes{
 	width: 25%;
 	height: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	color: white;
 }
 
-.color {
+.color, .size{
 	height: 100%;
 	width: 27px;
 	display: flex;
@@ -37,6 +41,16 @@ html, body {
 	justify-content: center;
 	cursor: pointer;
 	border-radius: 50%;
+}
+
+.sizes {
+	width: 10%;
+	padding-right: 10px;
+}
+
+.size {
+	border-radius: 0%;
+	background-color: #d0d0d0;
 }
 
 .black {
@@ -57,4 +71,27 @@ html, body {
 
 .blue {
 	background-color: #0074D9;
+}
+
+.selected {
+	border: 4px solid #d0d0d0;
+}
+
+.selected-size {
+	border: 4px solid #101010;
+}
+
+.small {
+	width: 6px;
+	height: 6px;
+}
+
+.medium {
+	width: 12px;
+	height: 12px;
+}
+
+.large {
+	width: 18px;
+	height: 18px;
 }

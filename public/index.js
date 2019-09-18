@@ -1,4 +1,5 @@
 let colors = document.getElementsByClassName('color');
+let sizes = document.getElementsByClassName('size');
 let container = document.getElementById('container');
 let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
@@ -13,7 +14,7 @@ canvas.height = parseInt(containerStyle.getPropertyValue('height'));
 context.lineWidth = 3;
 context.lineJoin = 'round';
 context.lineCap = 'round';
-context.strokeStyle = '#00CC99';
+context.strokeStyle = '#000';
 
 // change paint color
 for(let color of colors) {
@@ -22,7 +23,29 @@ for(let color of colors) {
 
 function changeColor() {
     context.strokeStyle = this.getAttribute('data-color');
+    
+    for(let color of colors) {
+        color.classList.remove('selected');
+    }
+
+    this.classList.add('selected');
 }
+
+//change size
+for(let size of sizes) {
+    size.onclick = changeSize;
+}
+
+function changeSize() {
+    context.lineWidth = parseInt(this.getAttribute('data-size'));
+    
+    for(let size of sizes) {
+        size.classList.remove('selected-size');
+    }
+
+    this.classList.add('selected-size');
+}
+
 
 // event listeners for drawing to the canvas
 canvas.addEventListener('mousemove', function(event) {
