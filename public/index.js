@@ -23,7 +23,7 @@ for(let color of colors) {
 
 function changeColor() {
     context.strokeStyle = this.getAttribute('data-color');
-    
+
     for(let color of colors) {
         color.classList.remove('selected');
     }
@@ -38,7 +38,7 @@ for(let size of sizes) {
 
 function changeSize() {
     context.lineWidth = parseInt(this.getAttribute('data-size'));
-    
+
     for(let size of sizes) {
         size.classList.remove('selected-size');
     }
@@ -56,15 +56,20 @@ canvas.addEventListener('mousemove', function(event) {
 canvas.addEventListener('mousedown', function() {
     context.beginPath();
     context.moveTo(mouse.x, mouse.y);
- 
+
     canvas.addEventListener('mousemove', onPaint, false);
 }, false);
 
 canvas.addEventListener('mouseup', function() {
     canvas.removeEventListener('mousemove', onPaint, false);
 }, false);
- 
+
 function onPaint() {
     context.lineTo(mouse.x, mouse.y);
-    context.stroke();
+	context.stroke();
 };
+
+window.onresize = function() {
+	canvas.width = parseInt(containerStyle.getPropertyValue('width'));
+	canvas.height = parseInt(containerStyle.getPropertyValue('height'));
+}

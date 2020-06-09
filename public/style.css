@@ -4,7 +4,8 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	overflow: hidden;
+	border: 1px solid #404040;
+	box-sizing: border-box;
 }
 
 #container {

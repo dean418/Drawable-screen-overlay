@@ -5,9 +5,9 @@ const url = require('url');
 function createWindow () {
 	let win = new BrowserWindow({
 		width: 800,
-    	height: 600, 
+    	height: 600,
 		title: 'Editor',
-		frame:false,
+		frame:true,
 		transparent:true,
 		webPreferences: {
 			nodeIntegration: true
